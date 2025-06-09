@@ -2,9 +2,12 @@ import streamlit as st
 from PIL import Image
 import io
 from moviepy import VideoFileClip
+from pydub.utils import which
 from pydub import AudioSegment
 import tempfile
 import os
+
+AudioSegment.converter = which("ffmpeg")
 
 st.set_page_config(page_title="Media Compressor", layout="centered")
 st.title("Media Compressor App")
